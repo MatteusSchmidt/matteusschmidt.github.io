@@ -21,21 +21,20 @@ body {
     display: flex;
     position: absolute;
     left: 50%;
-    transform: translate(-56px, 0);
+    transform: translate(-56px, -60px);
     border-radius: 100px;
     border: 6px solid white;
 }
 
 .about_me {
-    width: 70%;
-    left: 15%;
+    width: 100%;
     display: flex;
     position: absolute;
     justify-content: center;
     color: white;
-    font-size: 28px;
+    font-size: 30px;
     text-align: center;
-    margin-top: 290px;
+    margin-top: 200px;
     word-wrap: break-word;
 }
 
@@ -45,7 +44,7 @@ div p b {
 
 div p {
     font-weight: 400;
-    max-width: 700px;
+    max-width: 800px;
 }
 
 small {
@@ -98,7 +97,7 @@ img {
     display: flex;
     position: absolute;
     width: 100%;
-    top: 555px;
+    top: 535px;
     justify-content: center;
     align-items: center;
     z-index: 0;
@@ -196,7 +195,7 @@ section {
 
 section h2 {
     font-size: 27px;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
 }
 
 
@@ -211,6 +210,7 @@ section h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: auto;
 }
 
@@ -218,6 +218,7 @@ section h2 {
     width: 100%;
     height: auto;
     padding: 35px 0 0 40px;
+    margin-top: 50px;
     background-color: #f3f4f6;
     border: 1px solid rgba(119, 119, 119, 0.3);
     border-radius: 6px;
@@ -233,7 +234,7 @@ section h2 {
 }
 
 .project-description-container {
-    width: 50%;
+    width: 100%;
     padding-right: 50px;
     display: flex;
     justify-content: left;
@@ -242,11 +243,19 @@ section h2 {
 
 .project-description-container h3 {
     text-align: left;
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: 400;
+    font-size: 24px;
     color: black;
     margin: 0;
     padding-right: 50px;
+}
+
+.project-description-container .row p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #6b6b6b;
+    margin: 0;
+    padding: 0;
 }
 
 .made-with {
@@ -254,12 +263,14 @@ section h2 {
     justify-content: left;
     align-items: center;
     flex-direction: row;
-    margin: -5px 0 0 10px;
+    margin: 0 0 0 10px;
 }
 
 .made-with small {
+    font-weight: 500;
     font-size: 14px;
     color: dimgray;
+    margin-bottom: 5px;
 }
 
 .made-with img {
@@ -278,12 +289,13 @@ section h2 {
 }
 
 .project-image-container {
-    width: 50%;
+    width: 100%;
+    height: auto;
     margin-bottom: -40px;
     margin-right: -40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
-    transition: transform 0.2s ease-in-out; /* Define transition on child */
+    transition: transform 0.2s ease-in-out;
     transform-origin: right bottom;
 }
 
@@ -294,6 +306,29 @@ section h2 {
 .project-image {
     border-radius: 5px;
     width: 100%;
+}
+
+.project-image-container-IOS {
+    margin-left: 15%;
+    margin-right: 10%;
+    width: 40%;
+    height: inherit;
+    margin-bottom: -40px;
+    /*margin-right: -40px;*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, .6);
+    border-radius: 4vh;
+    overflow: hidden;
+    overflow-x: clip;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project:hover .project-image-container-IOS {
+    transform: scale(1.07);
+}
+
+.project-image-IOS {
+    width: 100%;
+    overflow-x: clip;
 }
 
 .project-links {
@@ -512,6 +547,112 @@ section h2 {
 .education-text-container p {
     margin-bottom: -25px;
 }
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.certification-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 700px;
+    width: 100%;
+}
+
+.certification-object-container {
+    width: 30%;
+    height: 150px;
+    padding: 30px 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f3f4f6;
+    border: 1px solid rgba(119, 119, 119, 0.3);
+    border-radius: 6px;
+    white-space: normal;
+    text-align: left;
+    text-wrap: normal;
+}
+
+.certification-object-container img {
+    width: 60px;
+    height: 60px;
+}
+
+.certification-object-container label {
+    font-weight: 500;
+    font-size: 12px;
+    color: #4f4f4f;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.certification-object-container p {
+    font-weight: 500;
+    font-size: 10px;
+    color: rgb(107, 107, 107);
+    margin: 0;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.certification-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #424242;
+    transition: .3s ease-in-out;
+
+}
+
+.certification-link img {
+    width: 8px;
+    height: 8px;
+}
+
+.new-tab-svg {
+    margin-bottom: 2px;
+    overflow: visible;
+}
+
+#arrow {
+    transition: transform .3s ease-in-out;
+}
+
+.certification-link:hover {
+    transition: .3s ease-in-out;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, .8);
+    transform: translateY(-2px) translateX(-2px);
+}
+
+.certification-link:hover #arrow {
+    /*animation: new-tab-animation .5s forwards ease-in-out;*/
+    transform: translateY(-3px) scale(1.15);
+
+}
+
+/*@keyframes new-tab-animation {*/
+/*    0% {*/
+/*        transform: translateX(0) scale(1);*/
+/*    }*/
+/*    100% {*/
+/*        transform: translateY(-3px) scale(1.15);*/
+/*    }*/
+/*}*/
 
 
 /* CSS for all form elements:

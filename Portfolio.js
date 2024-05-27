@@ -37,5 +37,3 @@ const projectsObserver = new IntersectionObserver(entries =>  {
         entry.target.classList.toggle("show")
     })
 })
-
-projects
