@@ -1,16 +1,23 @@
 {
-  "name": "portfolio-deployment",
-  "version": "0.0.0",
-  "private": true,
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My Portfolio",
+  "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/parcel-bundler/bin/cli.js public/index.js --out-dir public/dist"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "3.1.7",
+    "express": "5.0.0-beta.3",
+    "debug": "4.3.5",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
-  }
+  },
+  "engines": {
+    "node": ">=24.1"
+  },
+  "author": "",
+  "license": "ISC"
 }
