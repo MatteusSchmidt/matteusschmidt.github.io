@@ -22,23 +22,35 @@ body {
     padding: 0;
 }
 
+body, html {
+    overflow-x: clip;
+}
+
 
 /* CSS for all home elements:
         HOME SECTION */
 
 .home {
-    background: #ff7f26;
+    background: transparent;
     /*margin-top: -10px;*/
     height: 570px;
     width: 100%;
     padding: 0;
+    z-index: 1;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -20;
 }
 
 .headshot {
     display: flex;
     position: absolute;
     left: 50%;
-    transform: translate(-56px, -60px);
+    transform: translate(-76px, -80px);
     border-radius: 100px;
     border: 6px solid white;
 }
@@ -87,7 +99,7 @@ img {
     justify-content: center;
     align-items: center;
     border-radius: 33px;
-    height: 60px;
+    height: 55px;
     transition: -webkit-transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
 }
@@ -98,7 +110,7 @@ img {
     background-color: white;
     border: 2px solid black;
     margin-right: 5px;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .linkedin {
@@ -205,7 +217,7 @@ img {
 header {
     position: fixed;
     width: 545px;
-    height: 45px;
+    height: 50px;
     left: 50%;
     transform: translate(-50%, 25px);
     background: rgba(255, 255, 255, 0.8) center;
@@ -572,7 +584,7 @@ section h2 {
     width: 57px;
 }
 
-#maven {
+#node {
     width: 70px;
 }
 
@@ -1103,7 +1115,7 @@ footer {
         width: 38px;
     }
 
-    #maven {
+    #node {
         width: 47px;
     }
 
@@ -1242,7 +1254,7 @@ footer {
             font-size: 12px;
         }
         .headshot {
-            transform: translate(-56px, -130px);
+            transform: translate(-76px, -130px);
         }
 
         .about_me {
@@ -1530,7 +1542,7 @@ footer {
         color: ghostwhite;
     }
 
-    #email, #message {
+    #email, #message, #subject {
         background-color: #646464;
         color: ghostwhite;
     }

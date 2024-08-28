@@ -19,6 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matteus Schmidt - Portfolio</title>
     <link rel="stylesheet" href="Portfolio.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="/flocking/QuadTree.js"></script>
+    <script src="/flocking/boid.js"></script>
+    <script src="/flocking/sketch.js"></script>
 </head>
 <body>
     <header class="fade-in-down">
@@ -36,9 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     </header>
 
     <section class="home" id="home">
-        <img src="https://avatars.githubusercontent.com/u/132111359?v=4" height="100" width="100" alt="Picture of Matteus Schmidt" class="headshot grow-in"/>
+        <img src="https://avatars.githubusercontent.com/u/132111359?v=4" height="140" width="140" alt="Picture of Matteus Schmidt" class="headshot grow-in"/>
         <div class="about_me shake-in">
-            <p><b>Good day! </b>My name is <b>Matteus</b>; I am an undergraduate <b>student at USC</b> pursuing a B.S. in Economics and Mathematics, with a minor in <b>Computer Science</b>.</p>
+            <p><b>Good day! </b>My name is <b>Matteus</b>. I am an undergraduate <b>student at USC</b> pursuing a B.S. in Economics and Mathematics, with a minor in <b>Computer Science</b>.</p>
         </div>
         <div class="flex-box bounce-up">
             <a class="github" href="https://github.com/MatteusSchmidt" target="_blank">
@@ -71,11 +75,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                         <img src="https://cdn.iconscout.com/icon/free/png-512/free-html-3521493-2944937.png?f=webp&w=512" alt="PNG image of the HTML Logo">
                         <img src="https://cdn.iconscout.com/icon/free/png-512/free-css3-9-1175237.png?f=webp&w=512" alt="PNG image of the CSS Logo">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="PNG image of the JavaScript Logo">
-                        <img src="https://cdn.iconscout.com/icon/free/png-256/free-java-59-1174952.png?f=webp" alt="PNG image of the Java Logo">
-                        <img src="https://static-00.iconduck.com/assets.00/file-type-maven-icon-192x256-wb8b12w6.png" alt="PNG image of the Maven Logo">
+                        <img src="https://miro.medium.com/v2/resize:fit:900/1*vdnbwhsak73CHpy113Ljvw.png" alt="PNG image of the NodeJS Logo">
                     </div>
                     <p class="project-description">
-                        This portfolio project relies on HTML5, CSS3, and JavaScript for the front-end. The back-end includes a bird flight simulation implemented in Java, with the application deployed and managed through the Spring Boot Framework.
+                        This portfolio project relies on HTML5, CSS3, and JavaScript for the front-end. The back-end includes a bird flight simulation implemented in Javascript, with the application deployed and managed through nodeJS.
                     </p>
                     <div class="project-links">
                         <a href="https://github.com/MatteusSchmidt/Portfolio-Site" class="projects-github" target="_blank">
@@ -270,10 +273,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                 <label class="skill-label">Java</label>
             </div>
             <div class="skill-object">
-                <img src="https://static-00.iconduck.com/assets.00/file-type-maven-icon-192x256-wb8b12w6.png" alt="PNG image of the Apache Maven Logo" class="skill-image" id="maven">
-                <label class="skill-label">Maven</label>
-            </div>
-            <div class="skill-object">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/C%2B%2B_logo.png" alt="PNG image of the C++ Logo" class="skill-image" id="c++">
                 <label class="skill-label">C++</label>
             </div>
@@ -304,6 +303,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
             <div class="skill-object">
                 <img src="https://avatars.githubusercontent.com/u/33467679?s=280&v=4" alt="PNG image of the Google Colab Logo" class="skill-image">
                 <label class="skill-label">Google Colab</label>
+            </div>
+            <div class="skill-object">
+                <img src="https://miro.medium.com/v2/resize:fit:900/1*vdnbwhsak73CHpy113Ljvw.png" alt="PNG image of the Node JS Logo" class="skill-image" id="node">
+                <label class="skill-label">Node</label>
             </div>
             <div class="skill-object">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="PNG image of the JavaScript Logo" class="skill-image">
@@ -340,8 +343,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                         <img src="https://identity.usc.edu/wp-content/uploads/2022/08/TheSeal.png" alt="Icon" class="icon"> <!-- Replace the src with your icon URL -->
                     </div>
                 </div>
-                <div class="arrow bounce-left"></div>
-                <div class="experience-text-container bounce-left">
+                <div class="arrow"></div>
+                <div class="experience-text-container">
                     <b>Learning Assistant: ITP 265, Object-Oriented Programming </b>
                     <i>University of Southern California, Viterbi School of Engineering</i>
                     <div>Learning assistant for a course on object-oriented programming in Java. Host office hours, assess and grade student work, give prompt feedback on discussion boards, mentor students to prepare them for Data Structures.</div>
@@ -396,7 +399,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         </div>
 
         <div class="certification-container">
-            <h3>Certifications:</h3>
+            <h3>Certifications</h3>
             <div class="row" id="cert-row">
                 <div class="certification-object-container" id="PA-container">
                     <img src="https://algs4.cs.princeton.edu/cover.png" alt="Image of Princeton's Algorithms Part 1">
