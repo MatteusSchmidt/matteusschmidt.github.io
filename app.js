@@ -1,11 +1,9 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-// var router = express.Router();
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var usersRouter = require('./routes/users');
 var portfolioRouter = require('./routes/portfolio');
 var app = express();
 
@@ -21,7 +19,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', portfolioRouter);
-app.use('/users', usersRouter);
+
+//TODO add the code to start an HTTPS server
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
