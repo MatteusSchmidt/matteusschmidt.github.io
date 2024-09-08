@@ -12,6 +12,7 @@
     <script src="/javascripts/QuadTree.js"></script>
     <script src="/javascripts/boid.js"></script>
     <script src="/javascripts/sketch.js"></script>
+    <script src="/javascripts/client.js"></script>
 </head>
 <body>
     <header class="fade-in-down">
@@ -451,16 +452,15 @@
         <p id="contact-info">Reach me directly at <a href=mailto:"matteus@schmidtwork.dev" id="personal-email">matteus@schmidtwork.dev</a> or through the following form</p>
         <p id="hidden-email">Reach me directly at <a href=mailto:"matteus@schmidtwork.dev" id="hidden-email-link">matteus@schmidtwork.dev</a></p>
 
-        <form class="centered-form" action="send" method=POST id="email-form" enctype = "multipart/form-data">
-            <input type="text" id="email" name="email" placeholder="Email" >
-            <input type="text" id="subject" name="subject" placeholder="Subject" >
-            <textarea class="message" id="message" name="message" placeholder="Message" ></textarea>
+        <form class="centered-form" action="/send" method="POST" id="email-form" enctype="multipart/form-data">
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            <textarea class="message" id="message" name="message" placeholder="Message" required></textarea>
             <div class="button-group">
                 <input type="submit" name="submit" value="Submit" id="submit">
                 <input type="reset" value="Reset">
             </div>
         </form>
-
     </section>
     <br>
     <br>
@@ -469,8 +469,6 @@
     <footer>
         <p>&copy; 2024 Matteus Schmidt</p>
     </footer>
-
-    <script src="/javascripts/Portfolio.js"></script>
     <div class="overlay"></div>
 </body>
 </html>

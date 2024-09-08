@@ -4,11 +4,10 @@
   "description": "My Portfolio",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/parcel-bundler/bin/cli.js public/index.js --out-dir public/dist"
+    "start": "node app.js"
   },
   "dependencies": {
+    "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "debug": "4.3.5",
     "dotenv": "^16.4.5",
@@ -16,6 +15,7 @@
     "express": "5.0.0-beta.3",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "multiparty": "^4.2.3",
     "nodemailer": "^6.9.15"
   },
   "engines": {
