@@ -854,7 +854,7 @@ section h2 {
     border-radius: 6px;
     white-space: normal;
     text-align: left;
-    text-wrap: normal;
+    text-wrap: inherit;
 }
 
 #GDAS-container, #GA-container {
@@ -966,14 +966,54 @@ section h2 {
     display: none;
 }
 
-.centered-form input[type="text"], .centered-form textarea {
+.centered-form input[type="text"], .centered-form input[type="email"], .centered-form textarea {
     width: 600px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 12px;
     font-family: "Comfortaa", sans-serif;
+}
+
+.centered-form textarea {
+    padding: 10px 30px 10px 10px;
+    width: 580px;
+}
+
+.input:invalid:not(:placeholder-shown) {
+    border-color: red;
+}
+.input:invalid:not(:placeholder-shown) {
+    background-image: url("../images/X/Circle.svg"), url("../images/X/X.svg");
+}
+.input:valid:not(:placeholder-shown) {
+    background-image: url("../images/X/Check circle.svg");
+}
+.input:valid:not(:placeholder-shown), .input:invalid:not(:placeholder-shown){
+    background-size: 20px, 10px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) 7px, calc(100% - 15px) 12px;
+}
+.input:invalid ~ .button-group button[type="submit"] {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+@keyframes spin-in {
+    from {
+        scale: 0;
+        transform: rotate(360deg);
+    }
+    to {
+        scale: 1;
+        transform: rotate(0deg);
+    }
 }
 
 .centered-form textarea {
@@ -988,9 +1028,9 @@ section h2 {
     max-width: 600px;
 }
 
-.button-group input[type="submit"],
-.button-group input[type="reset"] {
-    font-size: 16px;
+.button-group button[type="submit"],
+.button-group button[type="reset"] {
+    font-size: 15px;
     font-family: "Comfortaa", sans-serif;
     border-radius: 33px;
     color: white;
@@ -1001,21 +1041,21 @@ section h2 {
     justify-content: center;
     align-items: center;
     margin-left: -10px;
-    width: 130px;
-    height: 45px;
+    width: 110px;
+    height: 40px;
     background-color: #ff7f26;
     transition: -webkit-transform 0.15s ease-in-out;
     transition: transform 0.15s ease-in-out;
 }
 
-.button-group input[type="reset"] {
+.button-group button[type="reset"] {
     /*991B1E*/
     background-color: #ff0000;
     margin-left: 10px;
 }
 
-.button-group input[type="submit"]:hover,
-.button-group input[type="reset"]:hover {
+.button-group button[type="submit"]:hover,
+.button-group button[type="reset"]:hover {
     transform: scale(1.1);
 }
 
@@ -1216,8 +1256,12 @@ footer {
         margin-right: 15px;
     }
 
-    .centered-form, .centered-form input[type="text"], .centered-form textarea {
+    .centered-form, .centered-form input[type="text"], .centered-form input[type="email"], .centered-form textarea {
         width: 79%;
+    }
+
+    .centered-form textarea {
+        width: calc(79% - 20px);
     }
 
     #contact p {
@@ -1231,8 +1275,8 @@ footer {
         width: 79%;
     }
 
-    .button-group input[type="submit"],
-    .button-group input[type="reset"] {
+    .button-group button[type="submit"],
+    .button-group button[type="reset"] {
         font-size: 14px;
         margin-left: -10px;
         width: 105px;
@@ -1241,7 +1285,7 @@ footer {
         transition: transform 0.15s ease-in-out;
     }
 
-    .button-group input[type="reset"] {
+    .button-group button[type="reset"] {
         /*991B1E*/
         margin-left: 10px;
     }
@@ -1380,8 +1424,12 @@ footer {
             margin: 0;
         }
 
-        .centered-form, .centered-form input[type="text"], .centered-form textarea {
+        .centered-form, .centered-form input[type="text"], .centered-form input[type="email"] {
             width: 92%;
+        }
+
+        .centered-form textarea {
+            width: calc(92% - 20px);
         }
 
         #contact-info {

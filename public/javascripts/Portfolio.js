@@ -104,28 +104,3 @@ function setSpacerHeight() {
 }
 window.onload = setSpacerHeight;
 window.onresize = setSpacerHeight;
-
-const submitButton = document.getElementById('submit');
-
-document.getElementById('email-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    submitButton.disabled = true;
-    const formData = new FormData(this);
-    fetch('script.php', {
-        method: 'POST',
-        body: formData
-    })
-        .then(response => response.text())
-        .then(data => {
-            if (data.includes("Message has been sent successfully")) {
-                this.reset();
-            } else {
-                alert("Failed to send email: " + data);
-            }
-            submitButton.disabled = false;
-        })
-        .catch(error => {
-            console.error('Error: ', error);
-            submitButton.disabled = false;
-        });
-});

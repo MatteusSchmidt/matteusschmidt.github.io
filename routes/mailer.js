@@ -31,10 +31,10 @@ router.post("/", (req, res) => {
         });
 
         const mail = {
-            from: data.name,
+            from: data.email,
             to: process.env.GMAIL_SEND_TO,
             subject: data.subject,
-            text: `${data.name} <${data.email}> \n${data.message}`,
+            text: `${data.email} \n${data.message}`,
         };
 
         transporter.sendMail(mail, (err, info) => {

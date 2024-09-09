@@ -3,15 +3,12 @@ const flock = [];
 let quadTree;
 
 let borderObstacles = [];
-let Obstacles = [];
-
 
 function setup() {
     let canvas = createCanvas(windowWidth, select('#home').height);
     canvas.parent('home');
     createBorderObstacles();
-    // Obstacles.push(new ObstacleCircle(width/2, height/2, 59));
-    for (let i = 0; i < numBoids; i++) {
+    for (let i = 0; i < windowWidth; i++) {
         flock.push(new Boid());
     }
 }
@@ -24,7 +21,6 @@ function draw() {
     }
     for (let boid of flock) {
         boid.avoid(borderObstacles);
-        // boid.avoid(Obstacles);
         boid.flock(quadTree);
         boid.update();
         boid.show();
@@ -33,6 +29,16 @@ function draw() {
 
 function windowResized() {
     resizeCanvas(windowWidth, select('#home').height);
+    if (windowWidth < flock.length) {
+        for (let i = flock.length - 1; i >= windowWidth; i--) {
+            flock.splice(i, 1);
+        }
+    }
+    else {
+        for (let i = flock.length; i < windowWidth; i++) {
+            flock.push(new Boid());
+        }
+    }
     createBorderObstacles();
 }
 

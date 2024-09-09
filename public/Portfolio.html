@@ -453,12 +453,12 @@
         <p id="hidden-email">Reach me directly at <a href=mailto:"matteus@schmidtwork.dev" id="hidden-email-link">matteus@schmidtwork.dev</a></p>
 
         <form class="centered-form" action="/send" method="POST" id="email-form" enctype="multipart/form-data">
-            <input type="text" id="email" name="email" placeholder="Email" required>
-            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-            <textarea class="message" id="message" name="message" placeholder="Message" required></textarea>
+            <input class="input" type="email" id="email" name="email" placeholder="Email" required>
+            <input class="input" type="text" id="subject" name="subject" placeholder="Subject" minlength="6" required>
+            <textarea class="message, input" id="message" name="message" placeholder="Brief description of why you're reaching out" minlength="15" required></textarea>
             <div class="button-group">
-                <input type="submit" name="submit" value="Submit" id="submit">
-                <input type="reset" value="Reset">
+                <button type="submit" name="submit" value="Submit" id="submit">Submit</button>
+                <button type="reset" value="Reset">Reset</button>
             </div>
         </form>
     </section>
@@ -467,8 +467,8 @@
     <br>
 
     <footer>
-        <p>&copy; 2024 Matteus Schmidt</p>
     </footer>
+    <script src="/javascripts/Portfolio.js"></script>
     <div class="overlay"></div>
 </body>
 </html>
