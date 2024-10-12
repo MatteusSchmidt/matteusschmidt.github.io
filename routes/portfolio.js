@@ -4,7 +4,7 @@ var router = express.Router();
 
 // Route to serve the portfolio.html file
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'portfolio.html'));
+    res.sendFile(path.join(__dirname, '..', 'public', 'Portfolio.html'));
 });
 
 module.exports = router;

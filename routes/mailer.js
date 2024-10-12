@@ -7,13 +7,16 @@ const router = express.Router();
 
 router.use(bodyParser.urlencoded({ extended: true }));
 
-const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+const transporter = nodemailer.createTransport( {
+    host: "smtp-mail.outlook.com",
+    secureConnection: false,
     port: 587,
-    secure: false,
     auth: {
         user: process.env.USERNAME,
-        pass: process.env.APP_PASSWORD
+        pass: process.env.PASSWORD
+    },
+    tls: {
+        ciphers:'SSLv3'
     }
 });
 
@@ -31,10 +34,10 @@ router.post("/", (req, res) => {
         });
 
         const mail = {
-            from: data.email,
-            to: process.env.GMAIL_SEND_TO,
-            subject: data.subject,
-            text: `${data.email} \n${data.message}`,
+            from: process.env.EMAIL,
+            to: process.env.EMAIL,
+            subject: `Message from ${data.email}: ${data.subject}`,
+            text: `${data.message}`,
         };
 
         transporter.sendMail(mail, (err, info) => {

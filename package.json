@@ -4,7 +4,7 @@
   "description": "My Portfolio",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node bin/www"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
