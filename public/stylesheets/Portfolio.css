@@ -966,6 +966,10 @@ section h2 {
     display: none;
 }
 
+.submitting {
+    opacity: .6;
+}
+
 .centered-form input[type="text"], .centered-form input[type="email"], .centered-form textarea {
     width: 600px;
     padding: 10px;

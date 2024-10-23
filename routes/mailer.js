@@ -12,23 +12,10 @@ const transporter = nodemailer.createTransport( {
     secureConnection: true,
     port: 465,
     auth: {
-        user: "info@schmidtwork.dev",
-        pass: "pibxoP-retwi4-jajzym"
+        user: process.env.USERNAME,
+        pass: process.env.PASSWORD
     },
 });
-
-// const transporter = nodemailer.createTransport( {
-//     host: "mail.schmidtwork.dev",
-//     secureConnection: true,
-//     port: 587,
-//     auth: {
-//         user: "info@schmidtwork.dev",
-//         pass: process.env.PASSWORD
-//     },
-//     tls: {
-//         ciphers:'SSLv3'
-//     }
-// });
 
 router.post("/", (req, res) => {
     let form = new multiparty.Form();
@@ -44,8 +31,8 @@ router.post("/", (req, res) => {
         });
 
         const mail = {
-            from: "info@schmidtwork.dev",
-            to: "info@schmidtwork.dev",
+            from: process.env.EMAIL,
+            to: process.env.EMAIL,
             subject: `Message from ${data.email}: ${data.subject}`,
             text: `${data.message}`,
         };
