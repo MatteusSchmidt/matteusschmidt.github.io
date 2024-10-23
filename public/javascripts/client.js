@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         }).then((data) => {
             console.log(data);
+            form.reset();
         }).catch((error) => {
             console.error('Error:', error);
         });
